@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:nubank/controllers/controller_home_page.dart';
 import 'package:nubank/utils/colors_standard.dart';
 
 class Header extends StatefulWidget {
@@ -39,7 +41,7 @@ class _HeaderState extends State<Header> {
         ),
         child: IconButton(
           onPressed: () {},
-          icon: Icon(MdiIcons.accountCircleOutline),
+          icon: Icon(MdiIcons.accountOutline, color: Colors.white),
         ),
       ),
     );
@@ -48,9 +50,19 @@ class _HeaderState extends State<Header> {
   _options() {
     return Row(
       children: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(MdiIcons.eyeOutline, color: Colors.white),
+        GetBuilder<ControllerHomePage>(
+          init: ControllerHomePage(),
+          builder: (controllerHomePage) {
+            return IconButton(
+              onPressed: () => controllerHomePage.showValue(),
+              icon: Icon(
+                controllerHomePage.eyesValeu
+                    ? MdiIcons.eyeOutline
+                    : MdiIcons.eyeOff,
+                color: Colors.white,
+              ),
+            );
+          },
         ),
 
         IconButton(

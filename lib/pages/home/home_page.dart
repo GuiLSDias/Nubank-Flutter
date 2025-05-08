@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:nubank/pages/account/account.dart';
 import 'package:nubank/pages/home/model/header.dart';
-import 'package:nubank/utils/colors_standard.dart';
+
+import '../actions/menu_itens.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,7 +21,9 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
-          child: Column(children: [const Header()]),
+          child: Column(
+            children: const [Header(), AccountNubank(), MenuItens()],
+          ),
         ),
       ),
     );
