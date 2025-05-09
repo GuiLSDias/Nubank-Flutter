@@ -1,17 +1,7 @@
 # nubank
 
-A new Flutter project.
+The new Flutter project based on the nubank app.
 
-## Getting Started
+## Figma
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Nubank-Flutter
+(https://www.figma.com/design/yU1okhA41CkXPyj4tPVit9/projeto-tela-nubank--Community-?node-id=1-169&t=6aPLCNuMDLL73XGt-0)
