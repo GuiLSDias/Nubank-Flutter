@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nubank/pages/account/account.dart';
+import 'package:nubank/pages/home/account/account.dart';
+import 'package:nubank/pages/home/creditsCard/my_credit_card.dart';
+import 'package:nubank/pages/home/creditsCard/request_credit_card.dart';
 import 'package:nubank/pages/home/model/header.dart';
+import 'package:nubank/pages/home/notification/notification_page.dart';
 
-import '../actions/menu_itens.dart';
+import 'actions/menu_itens.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -22,7 +25,15 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           color: Colors.white,
           child: Column(
-            children: const [Header(), AccountNubank(), MenuItens()],
+            children: const [
+              Header(),
+              AccountNubank(),
+              MenuItens(),
+              MyCreditCard(),
+              NotificationsPage(),
+              Divider(),
+              RequestCreditCard(),
+            ],
           ),
         ),
       ),

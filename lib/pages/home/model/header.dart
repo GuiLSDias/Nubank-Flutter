@@ -34,7 +34,7 @@ class _HeaderState extends State<Header> {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        margin: const EdgeInsets.only(left: 20, top: 15),
+        margin: const EdgeInsets.only(left: 20, top: 45),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(80),
           color: secondaryColor,
