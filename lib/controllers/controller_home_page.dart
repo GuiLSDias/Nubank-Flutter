@@ -6,6 +6,11 @@ class ControllerHomePage extends GetxController {
 
   void showValue() {
     eyesValeu = !eyesValeu;
+    if (eyesValeu) {
+      saldo = ' ';
+    } else {
+      saldo = 'R\$ 1,00';
+    }
     update();
   }
 }

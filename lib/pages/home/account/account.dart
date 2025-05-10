@@ -43,10 +43,16 @@ class _AccountNubankState extends State<AccountNubank> {
     return GetBuilder<ControllerHomePage>(
       init: ControllerHomePage(),
       builder: (controller) {
-        return Text(
-          controller.saldo,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        );
+        return controller.eyesValeu
+            ? Container(
+              width: 80, // ajuste conforme o tamanho do saldo
+              height: 24,
+              color: Colors.grey[400],
+            )
+            : Text(
+              controller.saldo,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            );
       },
     );
   }
