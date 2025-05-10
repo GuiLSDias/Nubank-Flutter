@@ -4,6 +4,7 @@ import 'package:nubank/pages/home/account/account.dart';
 import 'package:nubank/pages/home/creditsCard/my_credit_card.dart';
 import 'package:nubank/pages/home/creditsCard/request_credit_card.dart';
 import 'package:nubank/pages/home/model/header.dart';
+import 'package:nubank/pages/home/more/find_out_more_page.dart';
 import 'package:nubank/pages/home/notification/notification_page.dart';
 
 import 'actions/menu_itens.dart';
@@ -33,6 +34,8 @@ class _HomePageState extends State<HomePage> {
               NotificationsPage(),
               Divider(),
               RequestCreditCard(),
+              Divider(),
+              FindOutMorePage(),
             ],
           ),
         ),
