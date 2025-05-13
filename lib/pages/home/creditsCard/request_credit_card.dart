@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:nubank/pages/home/creditsCard/apply_credit_card_screen.dart';
 import 'package:nubank/utils/colors_standard.dart';
 
 class RequestCreditCard extends StatefulWidget {
@@ -10,6 +11,10 @@ class RequestCreditCard extends StatefulWidget {
 }
 
 class _RequestCreditCardState extends State<RequestCreditCard> {
+  void onClicked(bool isChecked) {
+    print('Checkbox clicked! Value: $isChecked'); // Example action
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,17 +56,33 @@ class _RequestCreditCardState extends State<RequestCreditCard> {
 
   _requestCard() {
     return Container(
-      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(40),
       ),
-      child: Text(
-        'Pedir cartão',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
-          fontSize: 16,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.all(10),
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const ApplyCreditCardScreen(),
+            ),
+          );
+        },
+        child: Text(
+          'Pedir cartão',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            fontSize: 16,
+          ),
         ),
       ),
     );
