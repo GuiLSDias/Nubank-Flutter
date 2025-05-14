@@ -16,7 +16,7 @@ class _ApplyCreditCardScreenState extends State<ApplyCreditCardScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Pedir cartão de crédito'),
-        backgroundColor: Colors.purple,
+        backgroundColor: backgroundColor,
       ),
       body: SingleChildScrollView(
         child: Column(
