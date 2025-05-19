@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nubank/utils/colors_standard.dart';
+import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
+//import 'package:nubank/utils/colors_standard.dart';
 
 class ApplyCreditCardScreen extends StatefulWidget {
   const ApplyCreditCardScreen({super.key});

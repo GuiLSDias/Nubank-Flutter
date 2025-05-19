@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:nubank/pages/home/account/account.dart';
 import 'package:nubank/pages/home/creditsCard/my_credit_card.dart';
 import 'package:nubank/pages/home/creditsCard/request_credit_card.dart';
+import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 import 'package:nubank/pages/home/model/header.dart';
 import 'package:nubank/pages/home/more/find_out_more_page.dart';
 import 'package:nubank/pages/home/notification/notification_page.dart';
+import 'package:nubank/utils/colors_standard.dart';
 
 import 'actions/menu_itens.dart';
 
@@ -24,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       appBar: _appBar(),
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.white,
+          color: secondaryColor,
           child: Column(
             children: const [
               Header(),

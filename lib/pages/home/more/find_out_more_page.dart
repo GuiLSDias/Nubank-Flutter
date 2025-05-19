@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 
 class FindOutMorePage extends StatefulWidget {
   const FindOutMorePage({super.key});
@@ -86,7 +87,7 @@ class _FindOutMorePageState extends State<FindOutMorePage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              color: Color(0xFF8A05BE), // cor roxa
+              color: backgroundColor, // cor roxa
               borderRadius: BorderRadius.circular(40),
             ),
             child: const Text(
@@ -142,7 +143,7 @@ class _FindOutMorePageState extends State<FindOutMorePage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              color: Color(0xFF8A05BE), // cor roxa
+              color: backgroundColor, // cor roxa
               borderRadius: BorderRadius.circular(40),
             ),
             child: const Text(

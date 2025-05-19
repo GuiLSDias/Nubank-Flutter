@@ -4,6 +4,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:nubank/controllers/controller_home_page.dart';
 import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 import 'package:nubank/utils/colors_standard.dart';
+import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 
 class Header extends StatefulWidget {
   const Header({super.key});
@@ -38,7 +39,7 @@ class _HeaderState extends State<Header> {
         margin: const EdgeInsets.only(left: 20, top: 45),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(80),
-          color: secondaryColor,
+          color: backgroundColor,
         ),
         child: IconButton(
           onPressed: () {},

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:nubank/utils/colors_standard.dart';
+import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 
 class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});

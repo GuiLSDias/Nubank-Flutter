@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:nubank/controllers/controller_home_page.dart';
+import 'package:nubank/utils/colors_standard.dart';
 
 class AccountNubank extends StatefulWidget {
   const AccountNubank({super.key});
@@ -47,7 +48,7 @@ class _AccountNubankState extends State<AccountNubank> {
             ? Container(
               width: 80, // ajuste conforme o tamanho do saldo
               height: 24,
-              color: Colors.grey[400],
+              color: greyColor,
             )
             : Text(
               controller.saldo,
