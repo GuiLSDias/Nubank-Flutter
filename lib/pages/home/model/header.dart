@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:nubank/controllers/controller_home_page.dart';
+import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 import 'package:nubank/utils/colors_standard.dart';
 
 class Header extends StatefulWidget {
@@ -73,6 +74,18 @@ class _HeaderState extends State<Header> {
         IconButton(
           onPressed: () {},
           icon: Icon(Icons.person_add_alt_1_outlined, color: Colors.white),
+        ),
+
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Configurationaccount(),
+              ),
+            );
+          },
+          icon: Icon(MdiIcons.cogOutline, color: Colors.white),
         ),
       ],
     );

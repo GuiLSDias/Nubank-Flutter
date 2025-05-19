@@ -117,6 +117,7 @@ class _ApplyCreditCardScreenState extends State<ApplyCreditCardScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   // Ação ao clicar no botão
+                  Navigator.pop(context);
                   print('Solicitação de cartão enviada!');
                 },
                 style: ElevatedButton.styleFrom(
