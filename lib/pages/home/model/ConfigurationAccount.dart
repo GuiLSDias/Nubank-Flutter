@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:nubank/utils/colors_standard.dart';
 
 class Configurationaccount extends StatefulWidget {
   const Configurationaccount({super.key});
@@ -11,6 +12,7 @@ class Configurationaccount extends StatefulWidget {
 class _ConfigurationaccountState extends State<Configurationaccount> {
   Color _primaryColor = const Color.fromRGBO(155, 59, 218, 1);
   Color _secondaryColor = const Color.fromRGBO(240, 241, 245, 1);
+  Color _foregroundColor = Colors.white;
 
   void _showColorPicker(
     Color currentColor,
@@ -24,9 +26,15 @@ class _ConfigurationaccountState extends State<Configurationaccount> {
           (context) => AlertDialog(
             title: const Text('Escolha uma cor'),
             content: SingleChildScrollView(
-              child: BlockPicker(
+              child: ColorPicker(
                 pickerColor: currentColor,
-                onColorChanged: (color) => selectedColor = color,
+                onColorChanged: (color) {
+                  selectedColor = color;
+                },
+                enableAlpha: false,
+                displayThumbColor: true,
+                paletteType: PaletteType.hsv, // Similar ao da imagem
+                labelTypes: const [], // Sem labels adicionais
               ),
             ),
             actions: [
@@ -61,8 +69,10 @@ class _ConfigurationaccountState extends State<Configurationaccount> {
         appBar: AppBar(
           title: const Text('Configuração de Tema'),
           backgroundColor: _primaryColor,
+          foregroundColor: _foregroundColor,
         ),
-        body: Padding(
+        body: Container(
+          color: _secondaryColor.withOpacity(0.2),
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
@@ -71,7 +81,14 @@ class _ConfigurationaccountState extends State<Configurationaccount> {
                 trailing: CircleAvatar(backgroundColor: _primaryColor),
                 onTap:
                     () => _showColorPicker(_primaryColor, (color) {
-                      setState(() => _primaryColor = color);
+                      setState(() {
+                        _primaryColor = color;
+                        // Update foreground color dynamically
+                        _foregroundColor =
+                            _primaryColor == Colors.black
+                                ? Colors.white
+                                : Colors.black;
+                      });
                     }),
               ),
               const SizedBox(height: 20),
