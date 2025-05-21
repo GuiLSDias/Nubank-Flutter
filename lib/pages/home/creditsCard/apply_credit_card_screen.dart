@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/controllers/themeHelpers.dart';
 import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 //import 'package:nubank/utils/colors_standard.dart';
 
@@ -10,6 +11,23 @@ class ApplyCreditCardScreen extends StatefulWidget {
 }
 
 class _ApplyCreditCardScreenState extends State<ApplyCreditCardScreen> {
+  Color? primaryColor;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadThemeColors();
+  }
+
+  void _loadThemeColors() async {
+    final primary = await ThemeHelper.getPrimaryColor();
+    if (mounted) {
+      setState(() {
+        primaryColor = primary;
+      });
+    }
+  }
+
   bool isChecked = false;
 
   @override

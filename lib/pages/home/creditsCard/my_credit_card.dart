@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:nubank/utils/colors_standard.dart';
 
 class MyCreditCard extends StatefulWidget {
   const MyCreditCard({super.key});
@@ -16,7 +15,7 @@ class _MyCreditCard extends State<MyCreditCard> {
       padding: const EdgeInsets.all(15),
       margin: const EdgeInsets.fromLTRB(16, 10, 20, 10),
       decoration: BoxDecoration(
-        color: greyColor,
+        color: Colors.grey[200],
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(

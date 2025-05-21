@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank/controllers/themeHelpers.dart';
 import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 
 class FindOutMorePage extends StatefulWidget {
@@ -9,6 +10,23 @@ class FindOutMorePage extends StatefulWidget {
 }
 
 class _FindOutMorePageState extends State<FindOutMorePage> {
+  Color? primaryColor;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadThemeColors();
+  }
+
+  void _loadThemeColors() async {
+    final primary = await ThemeHelper.getPrimaryColor();
+    if (mounted) {
+      setState(() {
+        primaryColor = primary;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

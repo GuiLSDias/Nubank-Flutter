@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:nubank/utils/colors_standard.dart';
+import 'package:nubank/controllers/themeHelpers.dart';
 import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 
 class NotificationsPage extends StatefulWidget {
@@ -11,6 +11,23 @@ class NotificationsPage extends StatefulWidget {
 }
 
 class _NotificationsPageState extends State<NotificationsPage> {
+  Color? primaryColor;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadThemeColors();
+  }
+
+  void _loadThemeColors() async {
+    final primary = await ThemeHelper.getPrimaryColor();
+    if (mounted) {
+      setState(() {
+        primaryColor = primary;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -32,7 +49,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
               : const EdgeInsets.all(24),
 
       decoration: BoxDecoration(
-        color: greyColor,
+        color: Colors.grey[200],
         borderRadius: BorderRadius.circular(16),
       ),
       child: RichText(
@@ -72,7 +89,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
               : const EdgeInsets.all(19),
 
       decoration: BoxDecoration(
-        color: greyColor,
+        color: Colors.grey[200],
         borderRadius: BorderRadius.circular(16),
       ),
       child: RichText(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:nubank/utils/colors_standard.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:nubank/controllers/theme_controller.dart';
+import 'package:nubank/pages/home/home_page.dart';
 
 class Configurationaccount extends StatefulWidget {
   const Configurationaccount({super.key});
@@ -15,7 +15,6 @@ Color backgroundColor = const Color.fromRGBO(155, 59, 218, 1);
 Color secondaryColor = const Color.fromRGBO(240, 241, 245, 1);
 
 class _ConfigurationaccountState extends State<Configurationaccount> {
-  //Color _secondaryColor = const Color.fromRGBO(240, 241, 245, 1);
   Color _foregroundColor = Colors.white;
 
   @override
@@ -91,12 +90,22 @@ class _ConfigurationaccountState extends State<Configurationaccount> {
         primaryColor: backgroundColor,
         colorScheme: ColorScheme.fromSeed(
           seedColor: backgroundColor,
+          primary: backgroundColor,
           secondary: secondaryColor,
         ),
         useMaterial3: true,
       ),
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const HomePage()),
+              );
+            },
+          ),
           title: const Text('Configuração de Tema'),
           backgroundColor: backgroundColor,
           foregroundColor: _foregroundColor,
@@ -119,7 +128,7 @@ class _ConfigurationaccountState extends State<Configurationaccount> {
                                 ? Colors.black
                                 : Colors.white;
                       });
-                      saveColor('primaryColo', color);
+                      saveColor('primaryColor', color);
                     }),
               ),
               const SizedBox(height: 20),
@@ -137,16 +146,5 @@ class _ConfigurationaccountState extends State<Configurationaccount> {
         ),
       ),
     );
-  }
-
-  Future<void> saveColor(String key, Color color) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setInt(key, color.value);
-  }
-
-  Future<Color> loadColor(String key, {required Color defaultColor}) async {
-    final prefs = await SharedPreferences.getInstance();
-    final colorValue = prefs.getInt(key);
-    return colorValue != null ? Color(colorValue) : defaultColor;
   }
 }

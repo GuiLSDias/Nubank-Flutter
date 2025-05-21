@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:nubank/utils/colors_standard.dart';
 
 class MenuItens extends StatelessWidget {
   const MenuItens({super.key});
@@ -43,7 +42,7 @@ class MenuItens extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 10),
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: greyColor,
+              color: Colors.grey[200],
               borderRadius: BorderRadius.circular(48),
             ),
             child: Icon(icon),

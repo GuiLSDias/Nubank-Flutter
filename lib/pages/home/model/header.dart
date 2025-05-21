@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:nubank/controllers/controller_home_page.dart';
-import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
-import 'package:nubank/utils/colors_standard.dart';
+import 'package:nubank/controllers/theme_controller.dart';
 import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 
 class Header extends StatefulWidget {
@@ -14,6 +13,28 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> {
+  @override
+  void initState() {
+    super.initState();
+    _loadThemeColors();
+  }
+
+  void _loadThemeColors() async {
+    final primary = await loadColor(
+      'primaryColor',
+      defaultColor: backgroundColor,
+    );
+    final secondary = await loadColor(
+      'secondaryColor',
+      defaultColor: secondaryColor,
+    );
+
+    setState(() {
+      backgroundColor = primary;
+      secondaryColor = secondary;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -81,9 +102,7 @@ class _HeaderState extends State<Header> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => const Configurationaccount(),
-              ),
+              MaterialPageRoute(builder: (context) => Configurationaccount()),
             );
           },
           icon: Icon(MdiIcons.cogOutline, color: Colors.white),

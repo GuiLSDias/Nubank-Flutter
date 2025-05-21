@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:nubank/controllers/themeHelpers.dart';
 import 'package:nubank/pages/home/creditsCard/apply_credit_card_screen.dart';
-import 'package:nubank/utils/colors_standard.dart';
 import 'package:nubank/pages/home/model/ConfigurationAccount.dart';
 
 class RequestCreditCard extends StatefulWidget {
@@ -12,6 +12,23 @@ class RequestCreditCard extends StatefulWidget {
 }
 
 class _RequestCreditCardState extends State<RequestCreditCard> {
+  Color? primaryColor;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadThemeColors();
+  }
+
+  void _loadThemeColors() async {
+    final primary = await ThemeHelper.getPrimaryColor();
+    if (mounted) {
+      setState(() {
+        primaryColor = primary;
+      });
+    }
+  }
+
   void onClicked(bool isChecked) {
     print('Checkbox clicked! Value: $isChecked'); // Example action
   }
