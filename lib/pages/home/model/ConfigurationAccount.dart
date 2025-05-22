@@ -62,8 +62,9 @@ class _ConfigurationaccountState extends State<Configurationaccount> {
                 },
                 enableAlpha: false,
                 displayThumbColor: true,
-                paletteType: PaletteType.hsv, // Similar ao da imagem
-                labelTypes: const [], // Sem labels adicionais
+                paletteType: PaletteType.hsv,
+                labelTypes: const [],
+                hexInputBar: true,
               ),
             ),
             actions: [
